@@ -1,16 +1,8 @@
 local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 local window = DrRayLibrary:Load("FarszHub", "Default")
 
-getgenv().Option = nil
-
-function walkSpeed()
-    game.StarterPlayer.CharacterWalkSpeed = getgenv().Option
-	print("walk speed change to "..getgenv().Option)
-end
-
 local LPT = DrRayLibrary.newTab("LocalPlayer", "nil")
 LPT.newDropdown("WalkSpeed", "Select one of these options!", {"100", "200", "300", "400", "500"}, function(selectedOption)
-	getgenv().Option = selectedOption
-	walkSpeed()
-    print(getgenv().Option)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = selectedOption
+    print("speed changed to "..selectedOption)
 end)
