@@ -1,13 +1,13 @@
 local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 local window = DrRayLibrary:Load("Farsz Hub | Miner Simulator", "Default")
 
-local MainTab = DrRayLibrary.newTab("Main", "ImageIdHere")
+local MainTab = DrRayLibrary.newTab("Main", "nil")
     MainTab.SaveButton("Save   ", "Save data!", function()
         game:GetService("ReplicatedStorage").SavingToolsEvent:FireServer()
     print('Hello!')
 end)
 
-local LP = DrRayLibrary.newTab("LocalPlayer", "ImageIdHere")
+local LP = DrRayLibrary.newTab("LocalPlayer", "nil")
 LP.newSlider("WalkSpeed", "set your speed", 500, false, function(num)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = num
     print(num)
@@ -17,6 +17,6 @@ LP.newSlider("JumpPower", "set your jump", 500, false, function(num)
     print(num)
 end)
 
-local TPTab = DrRayLibrary.newTab("Teleport", "ImageIdHere")
-local ShopTab = DrRayLibrary.newTab("Shop", "ImageIdHere")
+local TPTab = DrRayLibrary.newTab("Teleport", "nil")
+local ShopTab = DrRayLibrary.newTab("Shop", "nil")
 
