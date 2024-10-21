@@ -3,7 +3,7 @@ local Window = OrionLib:MakeWindow({Name = "Farzs Hub", HidePremium = false, Sav
 
 local Tab = Window:MakeTab({
 	Name = "Teleport",
-	Icon = "nil",
+	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
