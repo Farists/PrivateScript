@@ -6,3 +6,13 @@ LPT.newDropdown("WalkSpeed", "Select one of these options!", {"100", "200", "300
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = selectedOption
     print("speed changed to "..selectedOption)
 end)
+
+LPT.newToggle("Auto Ken", "Ken! (prints the state)", true, function(toggleState)
+    if toggleState then
+	game.GetService("ReplicatedStorage").Remotes.CommE:FireServer("Ken",true)
+        print("On")
+    else
+	game.GetService("ReplicatedStorage").Remotes.CommE:FireServer("Ken",false)
+        print("Off")
+    end
+end)
