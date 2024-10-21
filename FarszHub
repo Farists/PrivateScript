@@ -1,16 +1,16 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "FarzsHub", HidePremium = false, SaveConfig = true, ConfigFolder = "FHConfig"})
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("FarszHub", "Default")
 
-local Tab = Window:MakeTab({
-	Name = "Teleport",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
+getgenv().Option = nil
 
+function walkSpeed()
+    game.StarterPlayer.CharacterWalkSpeed = getgenv().Option
+	print("walk speed change to "..getgenv().Option)
+end
 
-
-
-
-
-
-OrionLib:Init()
+local LPT = DrRayLibrary.newTab("LocalPlayer", "nil")
+LPT.newDropdown("WalkSpeed", "Select one of these options!", {"100", "200", "300", "400", "500"}, function(selectedOption)
+	getgenv().Option = selectedOption
+	walkSpeed()
+    print(getgenv().Option)
+end)
