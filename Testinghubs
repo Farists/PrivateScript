@@ -2,7 +2,7 @@ local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/
 local window = DrRayLibrary:Load("Farsz Hub | Miner Simulator", "Default")
 
 local MainTab = DrRayLibrary.newTab("Main", "nil")
-    MainTab.SaveButton("Save   ", "Save data!", function()
+    MainTab.newButton("Save   ", "Save data!", function()
         game:GetService("ReplicatedStorage").SavingToolsEvent:FireServer()
     print('Hello!')
 end)
